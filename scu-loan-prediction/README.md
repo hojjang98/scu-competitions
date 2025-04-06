@@ -1,172 +1,158 @@
-# 🏦 Loan Grade & Diabetes Classification (SCU AI Competition – Excellence Award)
+🏦 Loan Grade & Diabetes Classification (SCU AI Competition – Excellence Award)
+This project was developed for the 2nd AI Competition hosted by Seoul Cyber University.
+The competition involved solving two classification problems:
 
-This project was developed for the 2nd AI Competition hosted by Seoul Cyber University.  
-The goal was to predict:
-- **Loan Grade (multi-class classification)**
-- **Diabetes Status (binary classification)**
+Loan Grade Prediction (multi-class classification)
 
----
+Diabetes Prediction (binary classification)
 
-## 🏆 Award
-- **Excellence Award (우수상)**  
-  Awarded based on combined performance in two tasks:
+🏆 Award
+Excellence Award (우수상)
+Awarded based on the average performance across both tasks.
 
-### 🥇 Task 1: Loan Grade Prediction (Multi-class Classification)
-- [Leaderboard Link](https://www.kaggle.com/competitions/2-ai-loan/leaderboard)
+🥇 Task 1: Loan Grade Prediction
+Leaderboard Link
 
-### 🥈 Task 2: Diabetes Prediction (Binary Classification)
-- [Leaderboard Link](https://www.kaggle.com/competitions/2-ai/leaderboard)
+🥈 Task 2: Diabetes Prediction
+Leaderboard Link
 
-> 🧮 Final score was based on the average performance across both tasks.
+🔍 Problem Overview
+The competition involved two separate tabular classification problems:
 
----
+Loan grade classification based on customer financial information
 
-## 🔍 Problem Overview
+Diabetes classification based on medical and demographic data
 
-Two tasks were involved:
-1. **Loan grade prediction** using customer financial data
-2. **Diabetes classification** using medical information
+The core challenge was to apply effective preprocessing and feature engineering strategies
+to improve model performance in a structured data setting.
 
-The main challenge was designing effective preprocessing and feature engineering strategies  
-to improve model performance on tabular data.
+📦 Baseline Code Overview
+A basic starter notebook was provided as a baseline, applying a RandomForestClassifier
+without significant preprocessing, feature engineering, or model tuning.
 
----
+🔹 Baseline included:
+Dropping ID and label columns
 
-## 📦 Baseline Code Overview
+Simple train_test_split (no cross-validation)
 
-The competition provided a basic starter notebook as a baseline.  
-It used minimal preprocessing and applied a `RandomForestClassifier` to the loan grade prediction task.
+No missing value treatment
 
-### 📄 What the baseline did:
-- Dropped ID and label columns
-- Applied simple `train_test_split` (no cross-validation)
-- No missing value treatment
-- No feature engineering
-- No model tuning
-- Used only `RandomForestClassifier`
+No engineered features
 
-This baseline achieved a reasonable initial score but left much room for improvement.
+No hyperparameter tuning
 
-### 🚩 My Takeaways
-- The baseline was helpful for understanding the structure of the data
-- But the lack of preprocessing and feature engineering limited its performance
-- It served as a foundation for iterative experimentation and model improvement
+Single model: RandomForestClassifier
+
+While it served as a useful starting point, performance was limited by its simplicity.
+
 📄 [Baseline Notebook: 고객대출등급 완전 베이스.ipynb](./고객대출등급 완전 베이스.ipynb)
 
----
+🧪 Experiment Timeline Summary
+Through 40+ submissions, I conducted extensive experimentation in iterative phases.
 
----
+🔹 Phase 1: Establishing a Baseline (Submissions #1–#3)
+Basic preprocessing (mean/median imputation)
 
-## 🧪 Experiment Timeline Summary
+Initial attempts at feature creation
 
-Over 40+ submissions, I iteratively refined the model through:
+Minor performance gains observed
 
-### 🔹 Phase 1: Establishing a Baseline (Submissions #1–#3)
-- Minimal preprocessing
-- Early imputation methods (mean, median)
-- Initial feature engineering attempts
-- 📈 Small score improvements
+🔹 Phase 2: Feature Engineering & Selection (Submissions #4–#12)
+Introduced domain-informed features such as:
 
----
+이자부담율 (interest burden ratio)
 
-### 🔹 Phase 2: Feature Engineering & Selection (Submissions #4–#12)
-- Created domain-specific features:
-  - 이자부담율 (interest burden ratio)
-  - 근로기간 대비 신용거래기간 비율
-- Tried scaling & encoding strategies
-- 🔥 Best single-feature performance from 이자부담율 alone (`0.6935`)
+근로기간 대비 신용거래기간 비율 (ratio of employment period to credit history length)
 
----
+Applied scaling and encoding strategies
 
-### 🔹 Phase 3: Model Exploration & Tuning (Submissions #6–#13)
-- Compared LightGBM, CatBoost, RandomForest, SVM
-- Rejected underperformers (e.g., RandomForest)
-- Tuned LightGBM & applied ensemble
-- ✅ Best score achieved with **LightGBM + Ensemble** in submission #13
+🔥 Best single-feature result achieved using 이자부담율 (0.6935)
 
----
+🔹 Phase 3: Model Exploration & Tuning (Submissions #6–#13)
+Compared multiple models: LightGBM, CatBoost, RandomForest, SVM
 
-### 🔹 Phase 4: Advanced Feature Selection (Submissions #21–#30)
-- Feature importance-based selection
-- Voting/stacking ensemble with top N features
-- Applied regularization to reduce overfitting
+Eliminated underperformers
 
----
+Tuned LightGBM and introduced ensemble methods
 
-### 🔹 Phase 5: Post-peak Optimization (Submissions #31–#47)
-- Experiments with feature reordering, interaction variables
-- Explored Optuna tuning & model combinations
-- Some regressions observed, validating importance of simplicity
+✅ Best score in submission #13 using LightGBM + Ensemble
 
----
+🔹 Phase 4: Feature Selection Refinement (Submissions #21–#30)
+Applied feature importance-based selection
 
-📌 Throughout the process, I emphasized reproducibility, hypothesis-driven testing, and failure analysis.  
-This hands-on experimentation led to a deeper understanding of model behavior and performance tradeoffs.
+Introduced ensemble voting/stacking with selected features
 
----
+Used regularization to reduce overfitting
 
-## 🧠 Task 2: Diabetes Prediction (Binary Classification)
+🔹 Phase 5: Post-peak Optimization (Submissions #31–#47)
+Tested feature interaction and reordering strategies
 
-This task involved predicting whether an individual was diabetic based on medical and demographic features.  
-The dataset had both missing values and imbalanced classes, making preprocessing and model choice crucial.
+Conducted Optuna-based hyperparameter tuning
 
-### 📄 Baseline Overview
-The baseline model used a simple RandomForestClassifier without tuning or advanced preprocessing.
+Some regressions observed — highlighting the importance of simplicity
+
+Throughout, I emphasized hypothesis-driven testing, reproducibility, and failure analysis.
+
+🧠 Task 2: Diabetes Classification
+The second task involved predicting diabetes status using structured medical and demographic features.
+This dataset included missing values and class imbalance, which required careful handling.
 
 📁 [Baseline Notebook (to be added)](./당뇨병 예측 이진분류(베이스라인 코드).ipynb)
 
----
+🧪 Experiment Timeline Summary (Task 2)
+Total of 40+ submissions, key stages:
 
-## 🧪 Experiment Timeline Summary
+🔹 Phase 1: Data Cleaning & Feature Addition (#1–#6)
+Handled missing values using domain logic
+(e.g., gender-based imputation, mode value replacement)
 
-Total of 40+ submissions, key phases:
+Added custom features based on medical understanding
+(e.g., derived variables from hemoglobin A1c)
 
-### 🔹 Phase 1: Data Cleaning & Feature Addition (#1–#6)
-- Handled missing values using domain logic (e.g., 최빈값, 성별 → 여성)
-- Added derived features: 당화혈색소 관련 파생 변수
-- ✅ Best improvement from manually added features
+✅ Best improvement came from manual feature addition
 
-### 🔹 Phase 2: Model Exploration (#7–#13)
-- Tried LightGBM, CatBoost, RandomForest
-- LightGBM yielded best scores with minimal tuning
+🔹 Phase 2: Model Comparison (#7–#13)
+Evaluated LightGBM, CatBoost, RandomForest
 
-### 🔹 Phase 3: Feature Engineering & Selection (#14–#20)
-- Interaction variables (ex: [BMI × 혈당], [나이 × 당화혈색소])
-- Best result at **Submission #18**, Kaggle: **0.811983**
+LightGBM showed best results even with minimal tuning
 
-### 🔹 Phase 4: Ensemble & Tuning (#21–#40)
-- Applied:
-  - Stacking, Voting
-  - Class weights
-  - SMOTE
-  - Optuna-based tuning
-- F1 Macro Score peaked at **0.894** on validation, Kaggle best: **0.811983**
+🔹 Phase 3: Feature Engineering & Interaction (#14–#20)
+Introduced feature interactions such as:
 
----
+[BMI × 혈당], [나이 × 당화혈색소]
 
-## 🤖 Models Used
+Submission #18 yielded highest score: 0.811983 on Kaggle
 
-| Model | 사용 여부 | 비고 |
-|-------|-----------|------|
-| `LightGBM` | ✅ Best performer | 튜닝 및 앙상블에 가장 적합 |
-| `CatBoost` | ✅ 안정적 성능 | 일부 실험에서 사용 |
-| `XGBoost` | ✅ 최종 튜닝용 | 일부 특성 조합에서 성능 우수 |
-| `RandomForest` | ✅ 베이스라인 | 초기 실험용 |
-| `SVM` | ❌ Not effective | 실험했으나 성능 낮음 |
+🔹 Phase 4: Ensemble & Tuning (#21–#40)
+Applied:
 
----
+Voting & Stacking
 
-## 🧠 Key Learnings
+Class weight balancing
 
-- Simple feature combinations like [당화혈색소, 혈당차이] produced strong signals
-- Overengineering sometimes degraded performance
-- LightGBM + Optuna + Feature Selection = 최적의 조합
-- Pseudo labeling 및 SMOTE는 주의가 필요함
+SMOTE for oversampling
 
-> 📌 From feature engineering to ensemble strategy,  
-> I learned the importance of balancing model complexity and generalizability.
+Optuna for hyperparameter search
 
+F1 Macro peaked at 0.894 (validation), with Kaggle best at 0.811983
 
+🤖 Models Used
+Model	Used	Notes
+LightGBM	✅	Best performer; highly tunable
+CatBoost	✅	Stable results; used selectively
+XGBoost	✅	Strong in final tuning stages
+RandomForest	✅	Baseline only
+SVM	❌	Low performance; discarded
+💡 Key Learnings
+Simple engineered features like [당화혈색소, 혈당차이] were highly predictive
 
+Excessively complex pipelines sometimes degraded generalization
 
+LightGBM + Feature Selection + Optuna formed the best-performing combo
 
+Pseudo-labeling and SMOTE were only effective under certain conditions
+
+📌 This project taught me how feature design, model selection, and ensemble strategies
+interact to shape the final performance in real-world tabular ML tasks.
+
+📂 Let me know if you'd like this saved as a proper README.md, converted into a PDF portfolio, or split into sub-sections per task (e.g., one per notebook)!
