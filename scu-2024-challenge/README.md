@@ -83,6 +83,7 @@ scu-2024-challenge/
 The complete, refactored notebook (with structured English comments and clean logic) is available here:
 
 [👉 scu_2024_ai_competiton.ipynb](./scu_2024_ai_competiton.ipynb)
+
 ---
 
 ## 🧠 Key Learnings
