@@ -73,11 +73,13 @@ The dataset includes a mix of categorical and numerical features related to heal
 ```bash
 scu-2024-challenge/
 ├── data/
-│   └── train.csv
-├── scu_competition.ipynb
-├── 1___20240615.pptx
-└── README.md  ← (this file)
-```
+│   ├── train.csv
+│   ├── test.csv
+│   └── sample_submission.csv
+├── notebooks/
+│   └── scu_competition.ipynb
+├── README.md
+
 ## 📄 Final Notebook
 
 The complete, refactored notebook (with structured English comments and clean logic) is available here:
