@@ -87,7 +87,6 @@ The complete, refactored notebook (with structured English comments and clean lo
 👉 scu_2024_ai_competiton.ipynb
 
 
----
 🧠 Key Learnings
 Even basic health indicators (e.g., 임신_여부, 지병_여부) provided valuable signal
 
