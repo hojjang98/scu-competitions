@@ -83,7 +83,8 @@ scu-2024-challenge/
 
 📄 Final Notebook
 The complete, refactored notebook (with structured English comments and clean logic) is available here:
-[👉 scu_2024_ai_competiton.ipynb](https://github.com/hojjang98/scu_ai_competitions/blob/main/scu-2024-challenge/notebooks/scu_2024_ai_competiton.ipynb)
+> [SCU AI Competition 2024](https://github.com/hojjang98/scu_ai_competitions/blob/main/scu-2024-challenge/notebooks/scu_2024_ai_competiton.ipynb)
+
 
 
 
