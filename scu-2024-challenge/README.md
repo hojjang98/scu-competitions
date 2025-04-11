@@ -80,19 +80,19 @@ scu-2024-challenge/
 │   └── scu_competition.ipynb
 ├── README.md
 
-## 📄 Final Notebook
 
+📄 Final Notebook
 The complete, refactored notebook (with structured English comments and clean logic) is available here:
 
-[👉 scu_2024_ai_competiton.ipynb](./scu_2024_ai_competiton.ipynb)
+👉 scu_2024_ai_competiton.ipynb
+
 
 ---
+🧠 Key Learnings
+Even basic health indicators (e.g., 임신_여부, 지병_여부) provided valuable signal
 
-## 🧠 Key Learnings
+Hormone levels required careful treatment due to missing and skewed values
 
-- Even basic health indicators (e.g., `임신_여부`, `지병_여부`) provided valuable signal  
-- Hormone levels required careful treatment due to missing and skewed values  
-- `LightGBM` handled categorical + numerical mix efficiently  
-- Feature simplicity outperformed overcomplicated transformations
+LightGBM handled categorical + numerical mix efficiently
 
----
+Feature simplicity outperformed overcomplicated transformations
